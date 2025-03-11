@@ -65,7 +65,7 @@ export default function Right() {
                   alt=""
                 />
                 <ruby>
-                  281 <rt>Top Users</rt>
+                  323 <rt>Top Users</rt>
                 </ruby>
               </div>
               <hr />
@@ -80,7 +80,7 @@ export default function Right() {
                   alt=""
                 />
                 <ruby>
-                  281 <rt>Revenue</rt>
+                  50K <rt>Revenue</rt>
                 </ruby>
               </div>
               <hr />
@@ -95,7 +95,7 @@ export default function Right() {
                   alt=""
                 />
                 <ruby>
-                  281 <rt>Followers</rt>
+                  20K <rt>Followers</rt>
                 </ruby>
               </div>
               <hr />

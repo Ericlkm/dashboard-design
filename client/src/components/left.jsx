@@ -10,7 +10,7 @@ import { GoGraph } from "react-icons/go";
 import { MdOutlineDashboard } from "react-icons/md";
 import { CiLogin } from "react-icons/ci";
 import { PiTrademarkRegisteredBold } from "react-icons/pi";
-
+import { Link } from "react-router-dom";
 export default function Left() {
   return (
     <>
@@ -49,15 +49,21 @@ export default function Left() {
           </div>
           <div className="menu">
             <CiLogin />
-            <span className="item">Login</span>
+            <Link to="/login" className="item">
+              Login
+            </Link>
           </div>
           <div className="menu">
             <PiTrademarkRegisteredBold />
-            <span className="item">Register</span>
+            <Link to="/register" className="item">
+              Register
+            </Link>
           </div>
-          <div className="menu">
+          <div className="link">
             {/* icon */}
-            <button>Go pro</button>
+            <Link to="https://github.com/ericlkm" target="_blank">
+              Check my Github!
+            </Link>
           </div>
         </div>
       </div>
