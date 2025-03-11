@@ -1,0 +1,53 @@
+.left-menu {
+  flex: 1.2;
+  position: sticky;
+  top: 1rem;
+  height: calc(100vh - 1rem);
+  left: 0;
+  z-index: 1;
+
+  .left-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    height: calc(100vh - 2.8rem);
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.071);
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      img {
+        width: 70px;
+      }
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .item {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          color: grey;
+        }
+      }
+      button {
+        text-align: center;
+        width: 10rem;
+        padding: 0.5rem 1rem;
+        background-color: rgb(0, 106, 255);
+        border: none;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+  }
+}
