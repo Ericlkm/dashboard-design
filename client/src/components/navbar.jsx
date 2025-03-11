@@ -1,8 +1,24 @@
 import "../sass/navbar.scss";
-import { CiUser, CiSettings } from "react-icons/ci";
+import { CiUser, CiSettings, CiDark } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { CgDetailsMore } from "react-icons/cg";
+import { Dropdown, Space } from "antd";
 
 export default function Navbar() {
+  const items = [
+    {
+      icon: <CiUser />,
+      label: "Profile",
+    },
+    {
+      icon: <CiDark />,
+      label: "Theme",
+    },
+    {
+      icon: <CgDetailsMore />,
+      label: "More",
+    },
+  ];
   return (
     <>
       <div className="navbar">
@@ -14,12 +30,14 @@ export default function Navbar() {
             <div className="search">
               <input type="text" placeholder="Search..." />
             </div>
-            <div popover="auto" id="user-popover">
-              <h2>usre</h2>
-            </div>
+
             <div className="icons">
-              <span popoverTarget="user-popover">
-                <CiUser />
+              <span>
+                <Dropdown menu={{ items }}>
+                  <Space>
+                    <CiUser />
+                  </Space>
+                </Dropdown>
               </span>
               <span>
                 <CiSettings />
