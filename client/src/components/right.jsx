@@ -1,9 +1,10 @@
 import "../sass/right.scss";
-import { TbBrandBooking } from "react-icons/tb";
 import Navbar from "./navbar";
 import { PiDotsThreeOutlineVertical } from "react-icons/pi";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
-
+import { LineChart } from "@mui/x-charts/LineChart";
+import { BarChart } from "@mui/x-charts";
+import { PieChart } from "@mui/x-charts";
 export default function Right() {
   const data = [
     {
@@ -41,6 +42,17 @@ export default function Right() {
     <>
       <div className="right">
         <Navbar />
+        <LineChart
+          xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+          series={[
+            {
+              data: [2, 5.5, 2, 8.5, 1.5, 5],
+              area: true,
+            },
+          ]}
+          height={300}
+          colors={["#98d7c2"]}
+        />
         <div className="container">
           <div className="cards">
             <div className="card">
@@ -107,40 +119,68 @@ export default function Right() {
         </div>
         <div className="graphs">
           <div className="graph">
-            <img
-              src="https://img.freepik.com/free-vector/blue-marketing-charts-design-template_52683-24522.jpg?semt=ais_hybrid"
-              alt=""
+            <LineChart
+              series={[
+                {
+                  data: [0, 33, 223, 199],
+                },
+              ]}
+              width={400}
+              height={200}
+              xAxis={[
+                { data: ["Jan", "Feb", "Mar", "Apr"], scaleType: "point" },
+              ]}
+              margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
+              colors={["lightblue"]}
             />
             <div className="info">
               <h3>Website Views</h3>
               <p>Last Campaign Performance</p>
             </div>
-            <span>campain Set twos days ago</span>
+            <span>Checkout our Website!</span>
           </div>
           <div className="graph">
-            <img
-              src="https://img.freepik.com/free-vector/realistic-waterfall-chart-collection_52683-41524.jpg?semt=ais_hybrid"
-              alt=""
+            <BarChart
+              series={[
+                {
+                  data: [1, 23, 4, 45, 6, 12],
+                },
+              ]}
+              xAxis={[
+                { data: ["Jan", "Feb", "Mar", "Apr"], scaleType: "band" },
+              ]}
+              colors={["lightgreen"]}
+              width={320}
             />
             <div className="info">
               <h3>Daily Sales</h3>
               <p>(+15%) increase in today sales.</p>
             </div>
-            <span>campain Set twos days ago</span>
+            <span>Sales for this upcoming month!</span>
           </div>
           <div className="graph">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYQN2eHltMYuWes8BnIjgMAaNt1N3IG76i6A&s"
-              alt=""
+            <PieChart
+              series={[
+                {
+                  data: [
+                    { id: 0, value: 40, label: "Views" },
+                    { id: 1, value: 30, label: "Sales" },
+                    { id: 2, value: 30, label: "Bookings" },
+                  ],
+                },
+              ]}
+              width={400}
+              height={200}
+              tooltip={"item"}
+              colors={["coral", "lightgreen", "lightblue"]}
             />
             <div className="info">
-              <h3>Website Views</h3>
-              <p>campain set today</p>
+              <h3>Stay Updated!</h3>
+              <p>Campaign set today</p>
             </div>
-            <span>campain Set twos days ago</span>
+            <span>Stay up to date with us!</span>
           </div>
         </div>
-        {/* <div className="profile"></div> */}
 
         <div className="table-container">
           <h3>Projects</h3>

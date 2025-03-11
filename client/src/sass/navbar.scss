@@ -25,11 +25,11 @@
       gap: 1rem;
       .search {
         border: solid 1px rgb(201, 201, 201);
-        padding: 0.5rem 1rem;
         border-radius: 999px;
         input {
           border: none;
           background-color: transparent;
+          padding: 0.5rem 1rem;
           &:focus {
             outline: none;
           }
