@@ -74,13 +74,14 @@ export default function Right() {
                   src="https://cdn-icons-png.flaticon.com/128/9150/9150506.png"
                   alt=""
                 />
+
                 <ruby>
                   281 <rt>Bookings</rt>
                 </ruby>
               </div>
               <hr />
               <span>
-                <b>+55%</b> than last week
+                <b>+82%</b> than last week
               </span>{" "}
             </div>
             <div className="card">
@@ -90,12 +91,12 @@ export default function Right() {
                   alt=""
                 />
                 <ruby>
-                  323 <rt>Top Users</rt>
+                  4,204 <rt>Top Users</rt>
                 </ruby>
               </div>
               <hr />
               <span>
-                <b>+95%</b> than last week
+                <b>+25%</b> than last month
               </span>
             </div>
             <div className="card">
@@ -110,7 +111,7 @@ export default function Right() {
               </div>
               <hr />
               <span>
-                <b>+55%</b> than last week
+                <b>+55%</b> since yesterday
               </span>{" "}
             </div>
             <div className="card">
@@ -120,13 +121,11 @@ export default function Right() {
                   alt=""
                 />
                 <ruby>
-                  20K <rt>Followers</rt>
+                  +105 <rt>Followers</rt>
                 </ruby>
               </div>
               <hr />
-              <span>
-                <b>+55%</b> than last week
-              </span>{" "}
+              <span>Just Updated!</span>{" "}
             </div>
           </div>
         </div>
@@ -202,7 +201,7 @@ export default function Right() {
           </div>
         </div>
 
-        <div className="overview">
+        <div className="overview" id="table">
           <div className="table-container">
             <h3>Projects</h3>
             <div className="amount">

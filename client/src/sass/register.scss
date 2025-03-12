@@ -23,15 +23,28 @@ $text-color: rgb(26, 26, 60);
     min-height: 30rem;
     margin: auto;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.463);
+    background-color: rgba(255, 255, 255, 0.823);
     backdrop-filter: blur(20px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.119);
+    animation: slideIn 1s ease-in-out;
     .left {
       flex: 1;
       display: flex;
       justify-content: center;
       flex-direction: column;
       gap: 3rem;
+      background-color: #95a8f2;
       padding: 1rem;
+      border-radius: 10px;
+      color: $text-color;
+      h1 {
+        font-size: 3rem;
+      }
+      .link {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
     }
     .right {
       flex: 1;
@@ -97,5 +110,16 @@ $text-color: rgb(26, 26, 60);
         }
       }
     }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

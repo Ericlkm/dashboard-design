@@ -31,7 +31,9 @@ export default function Left() {
           </div>
           <div className="menu">
             <AiOutlineTable />
-            <span className="item">Tables</span>
+            <a href="#table" className="item">
+              Tables
+            </a>
           </div>
           <div className="menu">
             <AiOutlineBilibili />

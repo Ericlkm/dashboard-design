@@ -6,6 +6,7 @@ import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
 import { AuthContext } from "../utils/authContext";
 import { FcStackOfPhotos } from "react-icons/fc";
+import { PacmanLoader } from "react-spinners";
 
 export default function Register() {
   const { dispatch, isFetching } = useContext(AuthContext);
@@ -60,9 +61,6 @@ export default function Register() {
     }
   };
 
-  if (isFetching) {
-    return <h1>Loading......</h1>;
-  }
   return (
     <>
       <div className="reg-container">
@@ -70,20 +68,19 @@ export default function Register() {
         <div className="register">
           <div className="reg-card">
             <div className="left">
-              <h1>Register</h1>
+              <h1>Welcome Dashboardians!</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                accusantium dicta ipsa. Cumque eligendi delectus nulla tempora
-                nesciunt odit eos nam consequatur cupiditate. Deserunt modi,
-                voluptatem assumenda laboriosam numquam dicta?
+                Welcome! Sign up to join our community and enjoy exclusive
+                access to our content and features. Simply fill out the form
+                below to get started. We’re excited to have you on board!
               </p>
               <div className="link">
-                <h3>Already have an account?</h3>
+                <h4>Already have an account?</h4>
                 <Link to="/login">click here</Link>
               </div>
             </div>
             <div className="right">
-              <h3>Lorem ipsum dolor sit </h3>
+              <h3>Get started absolutely free!</h3>
               <div className="form">
                 <form action="">
                   <input
@@ -121,8 +118,12 @@ export default function Register() {
                   {err && (
                     <small style={{ paddingInline: "1rem" }}>{err}</small>
                   )}
-                  <button onClick={handleRegister} disabled={isFetching}>
-                    Submit
+                  <button onClick={handleRegister}>
+                    {isFetching ? (
+                      <PacmanLoader size={8} color="yellow" />
+                    ) : (
+                      "Register"
+                    )}
                   </button>
                 </form>
               </div>
