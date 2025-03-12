@@ -51,11 +51,11 @@ export default function Right() {
           ]}
           series={[
             {
-              data: [20, 40, 60, 80, 50, 100],
+              data: [80, 60, 60, 80, 50, 100],
               area: true,
             },
             {
-              data: [10, 35, 30, 40, 55, 76],
+              data: [60, 35, 50, 40, 55, 76],
               area: true,
             },
             {

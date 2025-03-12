@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-app.post("/avatar", upload.single("file"), (req, res) => {
+app.post("/api/avatar", upload.single("file"), (req, res) => {
   const file = req.file;
   return res.status(200).json(file.filename);
 });
@@ -34,7 +34,7 @@ function startServer() {
 
   app.listen(PORT, () => {
     db.connect();
-    console.log(`server startde on PORT ${PORT}`);
+    console.log(`server started on PORT ${PORT}`);
   });
 }
 

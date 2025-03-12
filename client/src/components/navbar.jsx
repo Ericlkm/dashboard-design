@@ -3,12 +3,13 @@ import { CiUser, CiSettings, CiDark } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { CgDetailsMore } from "react-icons/cg";
 import { Dropdown, Space } from "antd";
-
+import auth from "../utils/auth";
 export default function Navbar() {
+  console.log(auth.loggedIn());
   const items = [
     {
-      icon: <CiUser />,
-      label: "Profile",
+      icon: auth.loggedIn() ? <CiUser /> : null,
+      label: auth.loggedIn() ? <span>Profile</span> : null,
     },
     {
       icon: <CiDark />,

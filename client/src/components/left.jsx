@@ -25,7 +25,9 @@ export default function Left() {
           </div>
           <div className="menu">
             <MdOutlineDashboard />
-            <span className="item">Dashboard</span>
+            <Link to="/" className="item">
+              Dashboard
+            </Link>
           </div>
           <div className="menu">
             <AiOutlineTable />
