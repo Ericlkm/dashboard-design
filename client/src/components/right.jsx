@@ -15,7 +15,7 @@ export default function Right() {
     },
     {
       companyName: "Add Progress Track",
-      members: ["jack", "jonny"],
+      members: ["jack", "jonny", "Ron"],
       budget: "$3,000",
       completion: <progress value={45} max={100}></progress>,
     },
@@ -43,15 +43,28 @@ export default function Right() {
       <div className="right">
         <Navbar />
         <LineChart
-          xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+          xAxis={[
+            {
+              data: ["Mon", "Tue", "Wed", "Thur", "Fri", "sat"],
+              scaleType: "point",
+            },
+          ]}
           series={[
             {
-              data: [2, 5.5, 2, 8.5, 1.5, 5],
+              data: [20, 40, 60, 80, 50, 100],
+              area: true,
+            },
+            {
+              data: [10, 35, 30, 40, 55, 76],
+              area: true,
+            },
+            {
+              data: [0, 20, 15, 43, 30, 20],
               area: true,
             },
           ]}
-          height={300}
-          colors={["#98d7c2"]}
+          height={350}
+          colors={["#98d7c2", "lightgreen", "coral"]}
         />
         <div className="container">
           <div className="cards">
@@ -122,13 +135,17 @@ export default function Right() {
             <LineChart
               series={[
                 {
-                  data: [0, 33, 223, 199],
+                  data: [10, 50, 223, 199, 300],
+                  area: true,
                 },
               ]}
               width={400}
               height={200}
               xAxis={[
-                { data: ["Jan", "Feb", "Mar", "Apr"], scaleType: "point" },
+                {
+                  data: ["Jan", "Feb", "Mar", "Apr", "May"],
+                  scaleType: "point",
+                },
               ]}
               margin={{ top: 10, bottom: 30, left: 40, right: 10 }}
               colors={["lightblue"]}
@@ -143,11 +160,14 @@ export default function Right() {
             <BarChart
               series={[
                 {
-                  data: [1, 23, 4, 45, 6, 12],
+                  data: [37, 23, 30, 29.6, 52],
                 },
               ]}
               xAxis={[
-                { data: ["Jan", "Feb", "Mar", "Apr"], scaleType: "band" },
+                {
+                  data: ["Jan", "Feb", "Mar", "Apr", "May"],
+                  scaleType: "band",
+                },
               ]}
               colors={["lightgreen"]}
               width={320}
@@ -182,40 +202,106 @@ export default function Right() {
           </div>
         </div>
 
-        <div className="table-container">
-          <h3>Projects</h3>
-          <div className="amount">
-            <div className="check">
-              <IoCheckmarkDoneOutline />
-              <span>30+ projects ready</span>
+        <div className="overview">
+          <div className="table-container">
+            <h3>Projects</h3>
+            <div className="amount">
+              <div className="check">
+                <IoCheckmarkDoneOutline />
+                <span>30+ projects ready</span>
+              </div>
+              <PiDotsThreeOutlineVertical style={{ cursor: "pointer" }} />
             </div>
-            <PiDotsThreeOutlineVertical style={{ cursor: "pointer" }} />
-          </div>
-          <table className="styled-table">
-            <thead>
-              <tr>
-                <th>Company Name</th>
-                <th>Members</th>
-                <th>Budget</th>
-                <th>Progress</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.companyName}</td>
-                  <td>
-                    {item.members.map((mem) => {
-                      console.log(mem);
-                      return `${mem}, `;
-                    })}
-                  </td>
-                  <td>{item.budget}</td>
-                  <td>{item.completion}</td>
+            <table className="styled-table">
+              <thead>
+                <tr>
+                  <th>Companies</th>
+                  <th>Members</th>
+                  <th>Budget</th>
+                  <th>Progress</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {data.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.companyName}</td>
+                    <td>
+                      {item.members.map((mem) => {
+                        console.log(mem);
+                        return `${mem}, `;
+                      })}
+                    </td>
+                    <td>{item.budget}</td>
+                    <td>{item.completion}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="details">
+            <h3>Overview Status</h3>
+            <p>📈23% increase this month</p>
+
+            <div className="items">
+              <div className="status">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/8482/8482021.png"
+                  alt=""
+                />
+                <div className="info">
+                  <h4>$2400, Design changes</h4>
+                  <small>
+                    {new Date().toLocaleTimeString() +
+                      " " +
+                      new Date().toLocaleDateString()}
+                  </small>
+                </div>
+              </div>
+              <div className="status">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/3502/3502601.png"
+                  alt=""
+                />
+                <div className="info">
+                  <h4>New order #1832412</h4>
+                  <small>
+                    {new Date().toLocaleTimeString() +
+                      " " +
+                      new Date().toLocaleDateString()}
+                  </small>
+                </div>
+              </div>
+              <div className="status">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/3501/3501047.png"
+                  alt=""
+                />
+                <div className="info">
+                  <h4>Server Payments</h4>
+                  <small>
+                    {new Date().toLocaleTimeString() +
+                      " " +
+                      new Date().toLocaleDateString()}
+                  </small>
+                </div>
+              </div>
+              <div className="status">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/8983/8983163.png"
+                  alt=""
+                />
+                <div className="info">
+                  <h4>New card added for order #4395133</h4>
+                  <small>
+                    {new Date().toLocaleTimeString() +
+                      " " +
+                      new Date().toLocaleDateString()}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
