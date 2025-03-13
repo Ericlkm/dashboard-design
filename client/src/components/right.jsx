@@ -226,7 +226,6 @@ export default function Right() {
                     <td>{item.companyName}</td>
                     <td>
                       {item.members.map((mem) => {
-                        console.log(mem);
                         return `${mem}, `;
                       })}
                     </td>

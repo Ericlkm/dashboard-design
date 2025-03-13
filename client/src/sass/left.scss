@@ -1,10 +1,10 @@
 $text-color: rgb(28, 36, 70);
 
 .left-menu {
-  flex: 1.2;
+  flex: 1.5;
   position: sticky;
-  top: 1rem;
-  height: calc(100vh - 1rem);
+  top: 5px;
+  height: calc(100vh - 5px);
   left: 0;
   z-index: 1;
   color: $text-color;
@@ -16,7 +16,8 @@ $text-color: rgb(28, 36, 70);
     gap: 1rem;
     padding: 1rem;
     background-color: rgb(255, 255, 255);
-    height: calc(100vh - 3rem);
+    height: calc(100vh - 2.5rem);
+    width: 100%;
     margin: 1rem;
     border-radius: 1rem;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.071);
@@ -24,10 +25,14 @@ $text-color: rgb(28, 36, 70);
     .top {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
+      gap: 5px;
+      h3 {
+        font-size: 15px;
+      }
       img {
-        width: 70px;
+        width: 40px;
+        border-radius: 50%;
+        object-fit: cover;
       }
     }
 

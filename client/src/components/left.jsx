@@ -11,7 +11,12 @@ import { MdOutlineDashboard } from "react-icons/md";
 import { CiLogin } from "react-icons/ci";
 import { PiTrademarkRegisteredBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import auth from "../utils/auth";
+import { AuthContext } from "../utils/authContext";
+import { useContext } from "react";
 export default function Left() {
+  const { user } = useContext(AuthContext);
+  console.log(auth.getUser().data);
   return (
     <>
       <div className="left-menu">
@@ -21,7 +26,7 @@ export default function Left() {
               src="https://cdn-icons-png.flaticon.com/128/6820/6820955.png"
               alt=""
             />
-            <h3>Eric's Dashboard</h3>
+            <h3>{auth.loggedIn() ? user.username : "User"}'s Dashboard</h3>
           </div>
           <div className="menu">
             <MdOutlineDashboard />
@@ -51,20 +56,23 @@ export default function Left() {
             <GoGraph />
             <span className="item">Graphs</span>
           </div>
-          <div className="menu">
-            <CiLogin />
-            <Link to="/login" className="item">
-              Login
-            </Link>
-          </div>
-          <div className="menu">
-            <PiTrademarkRegisteredBold />
-            <Link to="/register" className="item">
-              Register
-            </Link>
-          </div>
+          {auth.loggedIn() ? null : (
+            <>
+              <div className="menu">
+                <CiLogin />
+                <Link to="/login" className="item">
+                  Login
+                </Link>
+              </div>
+              <div className="menu">
+                <PiTrademarkRegisteredBold />
+                <Link to="/register" className="item">
+                  Register
+                </Link>
+              </div>
+            </>
+          )}
           <div className="link">
-            {/* icon */}
             <Link to="https://github.com/ericlkm" target="_blank">
               Check my Github!
             </Link>

@@ -76,11 +76,17 @@ export default function Register() {
               </p>
               <div className="link">
                 <h4>Already have an account?</h4>
-                <Link to="/login">click here</Link>
+                <Link to="/login">Login here!</Link>
               </div>
             </div>
             <div className="right">
-              <h3>Get started absolutely free!</h3>
+              <div className="title">
+                <h3>Get started absolutely free!</h3>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/1195/1195017.png"
+                  alt=""
+                />
+              </div>
               <div className="form">
                 <form action="">
                   <input

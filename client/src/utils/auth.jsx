@@ -22,9 +22,11 @@ class Auth {
 
   login(token) {
     localStorage.setItem("token", token);
+    location.assign("/");
   }
   logout() {
     localStorage.removeItem("token");
+    location.assign("/");
   }
 }
 

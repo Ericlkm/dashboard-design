@@ -1,5 +1,5 @@
 $text-color: rgb(26, 26, 60);
-.reg-container {
+.login-container {
   background: linear-gradient(
       30deg,
       rgb(234, 234, 234),
@@ -9,16 +9,17 @@ $text-color: rgb(26, 26, 60);
   height: 100vh;
   background-attachment: fixed;
 }
-.register {
+.login {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 5rem);
   color: $text-color;
-  .reg-card {
+  .login-card {
     display: flex;
     justify-content: center;
+    flex-direction: row-reverse;
     width: 70rem;
     min-height: 30rem;
     margin: auto;
@@ -32,13 +33,24 @@ $text-color: rgb(26, 26, 60);
       display: flex;
       justify-content: center;
       flex-direction: column;
-      gap: 3rem;
+      gap: 1rem;
       background-color: #95a8f2;
       padding: 1rem;
       border-radius: 10px;
       color: $text-color;
-      h1 {
-        font-size: 3rem;
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+          font-size: 3rem;
+        }
+        img {
+          width: 170px;
+          object-fit: cover;
+          transform: translateY(-3.5rem) translateX(-3rem);
+        }
       }
       .link {
         display: flex;
@@ -53,15 +65,6 @@ $text-color: rgb(26, 26, 60);
       justify-content: center;
       gap: 4rem;
       padding: 1rem;
-      .title {
-        display: flex;
-        justify-content: space-between;
-        img {
-          width: 100px;
-          transform: translateY(-4rem) translateX(3rem);
-          filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
-        }
-      }
       .form {
         form {
           display: flex;
@@ -72,8 +75,7 @@ $text-color: rgb(26, 26, 60);
             padding: 0.8rem 1rem;
             border: none;
             border-radius: 999px;
-            box-shadow: 5px 5px 10px rgba(71, 71, 71, 0.086);
-
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.086);
             &:focus {
               outline: none;
             }

@@ -17,7 +17,8 @@
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.352);
 
     .nav-left {
-      color: grey;
+      color: rgb(28, 28, 59);
+      font-weight: bold;
     }
     .nav-right {
       display: flex;
@@ -42,6 +43,23 @@
         cursor: pointer;
         span {
           font-size: 1.5rem;
+        }
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        transform: translateY(-2.5px);
+        span {
+          font-size: large;
+        }
+        img {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          object-fit: cover;
         }
       }
     }
