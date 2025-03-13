@@ -1,5 +1,7 @@
 /* @import "tailwindcss"; */
-
+:root {
+  --text: #1c2135;
+}
 * {
   margin: 0;
   padding: 0;
@@ -19,4 +21,5 @@ a {
 body {
   background-color: rgb(242, 242, 242);
   overflow-x: hidden;
+  color: var(--text);
 }

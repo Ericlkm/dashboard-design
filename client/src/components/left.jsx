@@ -23,55 +23,58 @@ export default function Left() {
         <div className="left-card">
           <div className="top">
             <img
-              src="https://cdn-icons-png.flaticon.com/128/6820/6820955.png"
+              src="https://cdn-icons-gif.flaticon.com/18999/18999303.gif"
               alt=""
             />
+
             <h3>{auth.loggedIn() ? user.username : "User"}'s Dashboard</h3>
           </div>
-          <div className="menu">
-            <MdOutlineDashboard />
-            <Link to="/" className="item">
-              Dashboard
-            </Link>
+          <div className="menu-box">
+            <div className="menu">
+              <MdOutlineDashboard />
+              <Link to="/" className="item">
+                Dashboard
+              </Link>
+            </div>
+            <div className="menu">
+              <AiOutlineTable />
+              <a href="#table" className="item">
+                Tables
+              </a>
+            </div>
+            <div className="menu">
+              <AiOutlineBilibili />
+              <span className="item">Billing</span>
+            </div>
+            <div className="menu">
+              <CgInsights />
+              <span className="item">Insights</span>
+            </div>
+            <div className="menu">
+              <IoIosNotificationsOutline />
+              <span className="item">Notifications</span>
+            </div>
+            <div className="menu">
+              <GoGraph />
+              <span className="item">Graphs</span>
+            </div>
+            {auth.loggedIn() ? null : (
+              <>
+                <div className="menu">
+                  <CiLogin />
+                  <Link to="/login" className="item">
+                    Login
+                  </Link>
+                </div>
+                <div className="menu">
+                  <PiTrademarkRegisteredBold />
+                  <Link to="/register" className="item">
+                    Register
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
-          <div className="menu">
-            <AiOutlineTable />
-            <a href="#table" className="item">
-              Tables
-            </a>
-          </div>
-          <div className="menu">
-            <AiOutlineBilibili />
-            <span className="item">Billing</span>
-          </div>
-          <div className="menu">
-            <CgInsights />
-            <span className="item">Insights</span>
-          </div>
-          <div className="menu">
-            <IoIosNotificationsOutline />
-            <span className="item">Notifications</span>
-          </div>
-          <div className="menu">
-            <GoGraph />
-            <span className="item">Graphs</span>
-          </div>
-          {auth.loggedIn() ? null : (
-            <>
-              <div className="menu">
-                <CiLogin />
-                <Link to="/login" className="item">
-                  Login
-                </Link>
-              </div>
-              <div className="menu">
-                <PiTrademarkRegisteredBold />
-                <Link to="/register" className="item">
-                  Register
-                </Link>
-              </div>
-            </>
-          )}
           <div className="link">
             <Link to="https://github.com/ericlkm" target="_blank">
               Check my Github!

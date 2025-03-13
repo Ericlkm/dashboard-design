@@ -3,8 +3,9 @@ import Navbar from "./navbar";
 import { PiDotsThreeOutlineVertical } from "react-icons/pi";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
 import { LineChart } from "@mui/x-charts/LineChart";
-import { BarChart } from "@mui/x-charts";
+import { BarChart, SparkLineChart } from "@mui/x-charts";
 import { PieChart } from "@mui/x-charts";
+
 export default function Right() {
   const data = [
     {
@@ -38,34 +39,79 @@ export default function Right() {
       completion: <progress value={60} max={100}></progress>,
     },
   ];
+
   return (
     <>
       <div className="right">
         <Navbar />
-        <LineChart
-          xAxis={[
-            {
-              data: ["Mon", "Tue", "Wed", "Thur", "Fri", "sat"],
-              scaleType: "point",
-            },
-          ]}
-          series={[
-            {
-              data: [80, 60, 60, 80, 50, 100],
-              area: true,
-            },
-            {
-              data: [60, 35, 50, 40, 55, 76],
-              area: true,
-            },
-            {
-              data: [0, 20, 15, 43, 30, 20],
-              area: true,
-            },
-          ]}
-          height={350}
-          colors={["#98d7c2", "lightgreen", "coral"]}
-        />
+        <div className="user-graph">
+          <div className="line-graph">
+            <LineChart
+              xAxis={[
+                {
+                  data: ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "sat"],
+                  scaleType: "point",
+                },
+              ]}
+              series={[
+                {
+                  curve: "linear",
+                  data: [75, 60, 60, 80, 50, 100, 70],
+                  area: false,
+                },
+                {
+                  curve: "linear",
+                  data: [40, 35, 50, 40, 55, 76, 100],
+                  area: false,
+                },
+                {
+                  curve: "linear",
+                  data: [10, 20, 15, 43, 30, 40, 15],
+                  area: false,
+                },
+              ]}
+              height={350}
+              grid={{ horizontal: true, vertical: true }}
+              colors={["#98d7c2", "lightgreen", "coral"]}
+            />
+          </div>
+          <div className="graph-info">
+            <h2>User data usage!</h2>
+            <p>
+              Your data is securely stored and used to enhance your experience.
+              We analyze usage patterns to deliver personalized content and
+              improve functionality. Rest assured, we respect your privacy and
+              follow strict data protection policies.
+            </p>
+            <div className="data-keys">
+              <div className="keys">
+                <div
+                  className="color"
+                  style={{ backgroundColor: "#98d7c2" }}
+                ></div>
+                <span>Data Limits</span>
+              </div>
+              <div className="keys">
+                <div
+                  className="color"
+                  style={{ backgroundColor: "lightgreen" }}
+                ></div>
+                <span>Others</span>
+              </div>
+              <div className="keys">
+                <div
+                  className="color"
+                  style={{ backgroundColor: "coral" }}
+                ></div>
+                <span>Media</span>
+              </div>
+            </div>
+            <a href="">
+              You can adjust your privacy and data usage preferences anytime by
+              going to Data Settings. Click Here
+            </a>
+          </div>
+        </div>
         <div className="container">
           <div className="cards">
             <div className="card">
@@ -129,6 +175,7 @@ export default function Right() {
             </div>
           </div>
         </div>
+
         <div className="graphs">
           <div className="graph">
             <LineChart

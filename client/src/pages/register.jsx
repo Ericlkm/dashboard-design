@@ -25,6 +25,7 @@ export default function Register() {
         const res = await axios.post("/api/register", data);
         dispatch({ type: "REGISTER_SUCCESS", payload: res.data });
         console.log(res.data);
+        location.assign("/login");
         setErr(false);
       } catch (err) {
         console.log(err);

@@ -14,7 +14,7 @@ export default function Navbar() {
     {
       icon: auth.loggedIn() ? <CiUser /> : <CiLogin />,
       label: auth.loggedIn() ? (
-        <Link to="/me">Profile</Link>
+        <Link to="/profile">Profile</Link>
       ) : (
         <Link to="/login">Login</Link>
       ),
@@ -34,13 +34,12 @@ export default function Navbar() {
       ) : null,
     },
   ];
-  console.log(user);
   return (
     <>
       <div className="navbar">
         <div className="nav-card">
           <div className="nav-left">
-            <span>/ Dashboard</span>
+            <span>/ Dashboard </span>
           </div>
           <div className="nav-right">
             <div className="search">
