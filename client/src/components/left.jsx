@@ -8,7 +8,7 @@ import { CgInsights } from "react-icons/cg";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { GoGraph } from "react-icons/go";
 import { MdOutlineDashboard } from "react-icons/md";
-import { CiLogin } from "react-icons/ci";
+import { CiLogin, CiUser } from "react-icons/ci";
 import { PiTrademarkRegisteredBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import auth from "../utils/auth";
@@ -16,7 +16,6 @@ import { AuthContext } from "../utils/authContext";
 import { useContext } from "react";
 export default function Left() {
   const { user } = useContext(AuthContext);
-  console.log(auth.getUser().data);
   return (
     <>
       <div className="left-menu">
@@ -27,7 +26,9 @@ export default function Left() {
               alt=""
             />
 
-            <h3>{auth.loggedIn() ? user.username : "User"}'s Dashboard</h3>
+            <Link to="/" style={{ color: "white" }}>
+              {auth.loggedIn() ? user.username : "User"}'s Dashboard
+            </Link>
           </div>
           <div className="menu-box">
             <div className="menu">
@@ -58,7 +59,14 @@ export default function Left() {
               <GoGraph />
               <span className="item">Graphs</span>
             </div>
-            {auth.loggedIn() ? null : (
+            {auth.loggedIn() ? (
+              <div className="menu">
+                <CiUser />
+                <Link to="/profile" className="item">
+                  Profile
+                </Link>
+              </div>
+            ) : (
               <>
                 <div className="menu">
                   <CiLogin />

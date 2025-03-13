@@ -7,8 +7,10 @@ import auth from "../utils/auth";
 import { useContext } from "react";
 import { AuthContext } from "../utils/authContext";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const currentPath = useLocation().pathname;
   const { user } = useContext(AuthContext);
   const items = [
     {
@@ -39,7 +41,14 @@ export default function Navbar() {
       <div className="navbar">
         <div className="nav-card">
           <div className="nav-left">
-            <span>/ Dashboard </span>
+            <Link to="/">
+              / &nbsp;
+              {currentPath === "/"
+                ? `Dashboard `
+                : `${currentPath
+                    .charAt(1)
+                    .toLocaleUpperCase()}${currentPath.slice(2)}`}
+            </Link>
           </div>
           <div className="nav-right">
             <div className="search">
