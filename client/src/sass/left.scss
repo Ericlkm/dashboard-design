@@ -59,14 +59,18 @@ $text-color: rgb(28, 36, 70);
       }
     }
     .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       a {
         text-align: center;
-        width: 10rem;
+        width: 100%;
         padding: 0.5rem 1rem;
         border: none;
-        color: rgb(250, 250, 250);
-        background-color: rgba(128, 0, 128, 0.76);
-        border-radius: 999px;
+        color: rgb(0, 0, 0);
+        color: white;
+        background-color: rgb(57, 163, 220);
+        border-radius: 5px;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
         &:hover {

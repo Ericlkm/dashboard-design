@@ -9,7 +9,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { GoGraph } from "react-icons/go";
 import { MdOutlineDashboard } from "react-icons/md";
 import { CiLogin, CiUser } from "react-icons/ci";
-import { PiTrademarkRegisteredBold } from "react-icons/pi";
+import { PiGithubLogo, PiTrademarkRegisteredBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import auth from "../utils/auth";
 import { AuthContext } from "../utils/authContext";
